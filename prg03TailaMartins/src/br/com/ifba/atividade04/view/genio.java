@@ -24,7 +24,9 @@ public class genio extends javax.swing.JFrame {
     
     private void confSpinner(){
         
+        // Cria um modelo de números de 0 a 5.
         javax.swing.SpinnerNumberModel model = new javax.swing.SpinnerNumberModel(0, 0, 5, 1);
+        // Define o modelo para o componente spinner.
         spnVal.setModel(model);
     }
 
@@ -71,8 +73,9 @@ public class genio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PalpiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PalpiteActionPerformed
+        // Pega o número que o usuário escolheu.
         int pal = (Integer) spnVal.getValue();
-        
+        // Sorteia um número de 1 a 5.
         int num = (int) (Math.random() * 5) + 1;
         
         if(num == pal){
