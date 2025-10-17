@@ -8,6 +8,6 @@ package br.com.ifba.atividade08.view;
  *
  * @author Taila
  */
-public class perfilUsuario {
+public class PerfilUsuario {
     
 }
