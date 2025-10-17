@@ -89,4 +89,13 @@ public class Usuario {
           
     }
     
+    public Sessao criarSessao(){
+        String token = UUID.randomUUID().toString();
+        Sessao sessao = new Sessao(System.currentTimeMillis(), this, token);
+        sessoes.add(sessao);
+
+        System.out.println("Sessão criada: " + token);
+        return sessao;
+    }
+      
 }
