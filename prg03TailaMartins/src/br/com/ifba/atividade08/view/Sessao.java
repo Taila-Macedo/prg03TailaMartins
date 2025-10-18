@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package br.com.ifba.atividade08.view;
-
 /**
  *
  * @author Taila
@@ -42,6 +41,7 @@ public class Sessao {
     public void setToken(String token) {
         this.token = token;
     }
+    
     
     public String toString(){
         return "Sessao{id=" + id + ", usuario=" + usuario.getNomeUsuario() + ", token='" + token + "'}";

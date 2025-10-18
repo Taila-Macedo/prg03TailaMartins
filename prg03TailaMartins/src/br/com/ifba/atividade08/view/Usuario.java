@@ -14,15 +14,25 @@ import java.util.UUID;
  */
 public class Usuario {
     private Long id;
-    private PerfilUsuario perfil;
     private String nomeUsuario;
     private String email;
     private String senha;
+    private PerfilUsuario perfil;
     private LocalDateTime ultimoLogin;
     private boolean ativo;
    private List<LogAuditoria> logs = new ArrayList<>();
    private List<Sessao> sessoes = new ArrayList<>();
 
+   
+    public Usuario(Long id, PerfilUsuario perfil, String nomeUsuario, String email, String senha, boolean ativo) {
+    this.id = id;
+    this.perfil = perfil;
+    this.nomeUsuario = nomeUsuario;
+    this.email = email;
+    this.senha = senha;
+    this.ativo = ativo;
+}
+   
     public Long getId() {
         return id;
     }
@@ -80,9 +90,11 @@ public class Usuario {
     }
     
     public void logar(String senha){
+        // Verifica se a senha informada é igual à senha do usuário
         if(this.senha.equals(senha)){
+            // Atualiza o horário do último login
             this.ultimoLogin = LocalDateTime.now();
-            System.out.println(" Usuário logado com sucesso!");
+            //System.out.println(" Usuário logado com sucesso!");
         }else{
             System.out.println("Senha incorreta.");
         }
@@ -90,12 +102,17 @@ public class Usuario {
     }
     
     public Sessao criarSessao(){
+        // Gera um token único
         String token = UUID.randomUUID().toString();
         Sessao sessao = new Sessao(System.currentTimeMillis(), this, token);
         sessoes.add(sessao);
 
-        System.out.println("Sessão criada: " + token);
+        System.out.println("Sessão criada de " + nomeUsuario + ": " + token);
         return sessao;
     }
+    
+  public String toString(){
+      return "Usuario: " + nomeUsuario + "\nEmail: " + email + "\nPerfil: " + perfil + "\n";
+  }  
       
 }
