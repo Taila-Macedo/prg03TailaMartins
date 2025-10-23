@@ -3,14 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package br.com.ifba.atividade09.view;
-
+import javax.swing.JTextArea;
 /**
  *
  * @author Taila
  */
 public interface Pagamento {
 
-    double calcularTotal();
+    double calcularTotal(double valor);
     
-    void imprimirRecibo();
+    void imprimirRecibo(JTextArea area);
 }

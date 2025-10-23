@@ -24,6 +24,7 @@ public class PagamentoPix implements Pagamento{
     
     
     public double calcularTotal(double valor) {
+    // Calcula o valor final aplicando cashback de 2%
         valor = valor * 0.98;
         return valor;
     }
@@ -39,12 +40,4 @@ public class PagamentoPix implements Pagamento{
         area.setText(texto);
     }
 
-    //@Override
-    //public void imprimirRecibo(JTextArea area) {
-      // String texto = String.format(
-        //    "=== RECIBO PIX ===\n\nDesconto de 2%% aplicado!\nValor final a pagar: R$ %.2f",
-          //  valor
-        //);
-       //area.setText(texto);
-    //}
 }

@@ -25,6 +25,7 @@ public class PagamentoDinheiro implements Pagamento{
 
     @Override
     public double calcularTotal(double valor) {
+    // Calcula o valor final com desconto de 10%
         valor = valor * 0.9;
         return valor;
     }
@@ -37,6 +38,6 @@ public class PagamentoDinheiro implements Pagamento{
     texto += "Desconto de 10% aplicado!\n";
     texto += String.format("Valor final: R$ %.2f\n", calcularTotal(valor));
           
-    area.setText(texto);  
+    area.setText(texto);// Mostra no JTextArea  
     }
 }

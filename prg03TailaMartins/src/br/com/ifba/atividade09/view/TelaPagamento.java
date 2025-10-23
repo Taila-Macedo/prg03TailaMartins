@@ -20,6 +20,7 @@ public class TelaPagamento extends javax.swing.JFrame {
         configurarTela();
     }
     
+    // Configura a ComboBox com os tipos de pagamento
     private void configurarTela() {
         comboTipoPagamento.setModel(new javax.swing.DefaultComboBoxModel<>(
                 new String[] { "Dinheiro", "Cartao", "Pix" }
@@ -138,8 +139,8 @@ public class TelaPagamento extends javax.swing.JFrame {
 
     private void comboTipoPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboTipoPagamentoActionPerformed
         // TODO add your handling code here:
-        txtValor.setText("");
-        txtAreaRecibo.setText("");
+        txtValor.setText("");// Limpa o valor
+        txtAreaRecibo.setText("");// Limpa o recibo
 
         String tipo = (String) comboTipoPagamento.getSelectedItem();
 
@@ -156,7 +157,7 @@ public class TelaPagamento extends javax.swing.JFrame {
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
         try {
-        double valor = Double.parseDouble(txtValor.getText());
+        double valor = Double.parseDouble(txtValor.getText()); // Converte texto para double
         String tipo = (String) comboTipoPagamento.getSelectedItem();
 
         Pagamento pagamento;
@@ -175,6 +176,7 @@ public class TelaPagamento extends javax.swing.JFrame {
                 throw new IllegalArgumentException("Tipo de pagamento inválido.");
         }
 
+        // Calcula o valor final e imprime o recibo
         double valorFinal = pagamento.calcularTotal(valor);
         pagamento.calcularTotal(valorFinal);
         pagamento.imprimirRecibo(txtAreaRecibo);

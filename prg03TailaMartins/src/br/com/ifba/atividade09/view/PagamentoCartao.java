@@ -25,6 +25,7 @@ public class PagamentoCartao implements Pagamento{
 
     @Override
     public double calcularTotal(double valor) {
+        // Calcula o valor final com taxa de 5%
        return valor * 1.05;
     }
 
