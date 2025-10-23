@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package br.com.ifba.atividade09.view;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author Taila
@@ -17,6 +17,13 @@ public class TelaPagamento extends javax.swing.JFrame {
      */
     public TelaPagamento() {
         initComponents();
+        configurarTela();
+    }
+    
+    private void configurarTela() {
+        comboTipoPagamento.setModel(new javax.swing.DefaultComboBoxModel<>(
+                new String[] { "Dinheiro", "Cartao", "Pix" }
+        ));
     }
 
     /**
@@ -28,21 +35,158 @@ public class TelaPagamento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        lblTítulo = new javax.swing.JLabel();
+        lblTipoPagamento = new javax.swing.JLabel();
+        comboTipoPagamento = new javax.swing.JComboBox<>();
+        lblValor = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtValor = new javax.swing.JTextPane();
+        btnCalcular = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtAreaRecibo = new javax.swing.JTextArea();
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblTítulo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblTítulo.setText("Sistema de Pagamento");
+
+        lblTipoPagamento.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTipoPagamento.setText("Selecione o tipo de Pagamento:");
+
+        comboTipoPagamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboTipoPagamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboTipoPagamentoActionPerformed(evt);
+            }
+        });
+
+        lblValor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblValor.setText("Informe o valor do pagamento:");
+
+        jScrollPane2.setViewportView(txtValor);
+
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+
+        txtAreaRecibo.setColumns(20);
+        txtAreaRecibo.setRows(5);
+        jScrollPane3.setViewportView(txtAreaRecibo);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(lblTítulo, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblTipoPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(88, 88, 88)
+                                .addComponent(comboTipoPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(110, 110, 110)
+                                .addComponent(btnCalcular)))
+                        .addGap(0, 3, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblValor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTítulo)
+                .addGap(12, 12, 12)
+                .addComponent(lblTipoPagamento)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(comboTipoPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(lblValor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnCalcular)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void comboTipoPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboTipoPagamentoActionPerformed
+        // TODO add your handling code here:
+        txtValor.setText("");
+        txtAreaRecibo.setText("");
+
+        String tipo = (String) comboTipoPagamento.getSelectedItem();
+
+        switch (tipo) {
+            case "Dinheiro" -> lblValor.setText("Informe o valor do pagamento:");
+            case "Cartao" -> lblValor.setText("Informe o valor do pagamento:");
+            case "Pix" -> lblValor.setText("Informe o valor do pagamento:");
+            default -> lblValor.setText("Informe o valor do pagamento:");
+        }
+
+        txtValor.requestFocus();
+    }//GEN-LAST:event_comboTipoPagamentoActionPerformed
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        // TODO add your handling code here:
+        try {
+        double valor = Double.parseDouble(txtValor.getText());
+        String tipo = (String) comboTipoPagamento.getSelectedItem();
+
+        Pagamento pagamento;
+
+        switch(tipo) {
+            case "Dinheiro":
+                pagamento = new PagamentoDinheiro(valor);
+                break;
+            case "Cartao":
+                pagamento = new PagamentoCartao(valor);
+                break;
+            case "Pix":
+                pagamento = new PagamentoPix(valor);
+                 break;
+            default:
+                throw new IllegalArgumentException("Tipo de pagamento inválido.");
+        }
+
+        double valorFinal = pagamento.calcularTotal(valor);
+        pagamento.calcularTotal(valorFinal);
+        pagamento.imprimirRecibo(txtAreaRecibo);
+            
+    } catch(NumberFormatException e){
+        JOptionPane.showMessageDialog(this, "Digite um número válido!",
+                "Erro", JOptionPane.ERROR_MESSAGE);
+    } catch(IllegalArgumentException e){
+        JOptionPane.showMessageDialog(this, e.getMessage(),
+                "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +214,16 @@ public class TelaPagamento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCalcular;
+    private javax.swing.JComboBox<String> comboTipoPagamento;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lblTipoPagamento;
+    private javax.swing.JLabel lblTítulo;
+    private javax.swing.JLabel lblValor;
+    private javax.swing.JTextArea txtAreaRecibo;
+    private javax.swing.JTextPane txtValor;
     // End of variables declaration//GEN-END:variables
 }
