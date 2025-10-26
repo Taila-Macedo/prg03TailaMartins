@@ -35,6 +35,7 @@ public class Piramide extends FormaTridimensional {
 
     @Override
     public double obterArea() {
+        //Calcula a área da piramide
         double areaBase = base * base;
         double areaLateral = 2 * base * Math.sqrt((base / 2) * (base / 2) + altura * altura);
         return areaBase + areaLateral;

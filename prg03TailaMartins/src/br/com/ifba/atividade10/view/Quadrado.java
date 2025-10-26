@@ -26,11 +26,13 @@ public class Quadrado extends FormaBidimensional {
 
     @Override
     public double obterArea() {
+        //Calcula a área do quadrado
         return lado * lado;
     }
 
     @Override
     public String toString() {
-        return "Lado: " + lado;
+        return "-------Quadrado------\n" +
+                "Lado: "+ lado;
     }
 }

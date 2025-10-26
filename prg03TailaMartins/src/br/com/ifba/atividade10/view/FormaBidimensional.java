@@ -9,6 +9,6 @@ package br.com.ifba.atividade10.view;
  * @author Taila
  */
 public abstract class FormaBidimensional extends Forma {
-    public abstract double obterArea();
+    public abstract double obterArea();// Método abstrato para calcular a área
     
 }

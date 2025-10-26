@@ -25,11 +25,13 @@ public class Circulo extends FormaBidimensional {
 
     @Override
     public double obterArea() {
+        //Calcula a área do círculo
         return Math.PI * raio * raio;
     }
 
     @Override
     public String toString() {
-        return "Círculo de raio " + raio;
+        return "-------Circulo--------\n" +
+                "Raio: " + raio;
     }
 }

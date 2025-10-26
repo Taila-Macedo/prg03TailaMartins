@@ -25,11 +25,13 @@ public class Cubo extends FormaTridimensional {
 
     @Override
     public double obterArea() {
+        //Calcula a área do cubo
         return 6 * (lado * lado);
     }
 
     @Override
     public double obterVolume() {
+        //Calcula o volume do cubo
         return Math.pow(lado, 3);
     }
 

@@ -35,6 +35,7 @@ public class Triangulo extends FormaBidimensional {
 
     @Override
     public double obterArea() {
+        //Calcula a área do triângulo
         return (base * altura) / 2;
     }
 
@@ -44,7 +45,5 @@ public class Triangulo extends FormaBidimensional {
            "Base: " + base + "\n" +
            "Altura: " + altura;
     }
-    
-    
-    
+      
 }

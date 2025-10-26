@@ -25,11 +25,13 @@ public class Esfera extends FormaTridimensional {
     
     @Override
     public double obterArea() {
+        //Calcula área da superfície da esfera
         return 4 * Math.PI * raio * raio;
     }
 
     @Override
     public double obterVolume() {
+        //Calcula o volume da esfera
         return (4.0 / 3.0) * Math.PI * Math.pow(raio, 3);
     }
 
